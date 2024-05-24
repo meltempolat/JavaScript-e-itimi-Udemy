@@ -1,41 +1,36 @@
-let url = "https://www.meltempolat.com/";
-let kursAdi = "JavaScript çalışma"
+//OOP: NESNE TABANLI pROGRAMLAMA
 
-//url kaç karakterlidir
+let soru ={
+    soruMetni: "Hangisi JavaScript uygulamasidir?",
 
-let sonuc;
+    cevapSeçenekleri: {
+        a: "Node.js",
+        b: "TypeScript",
+        c: "Npm"
+    },
 
-sonuc = url.length;
-
-
-//Kurs adı kaç kelimeden oluşmaktadır
-
-sonuc = kursAdi.split(" ").length;
-
-// url https ile mi başlıyor 
-
-sonuc = url.startsWith("https");
-
-if(sonuc) {
-    console.log("evet");
+    dogruCevap:"c",
+    cevabiKontrolEt: function(cevap) {
+return cevap === this.dogruCevap
+    }
 }
 
-//url ve kursAdi değişkenlerini kullanarak şu stringi oluştur
-//https://www.meltempolat.com/JavaScript-çalışma"
+let soru1 ={
+    soruMetni: "Hangisi .net uygulamasidir?",
 
-kursAdi = kursAdi.toLowerCase();
-kursAdi = kursAdi.replaceAll(" ", "-")
+    cevapSeçenekleri: {
+        a: "Node.js",
+        b: "nuget",
+        c: "Npm"
+    },
 
-sonuc = '${url}/${kursAdi}';
-
-console.log(sonuc);
-
-
-
-
-
-
-
+    dogruCevap:"b",
+    cevabiKontrolEt: function(cevap) {
+return cevap === this.dogruCevap
+    }
+}
 
 
-console.log(sonuc);
+console.log(soru.soruMetni);
+console.log(soru.cevabiKontrolEt("c"));
+console.log(soru.cevabiKontrolEt("c"));
